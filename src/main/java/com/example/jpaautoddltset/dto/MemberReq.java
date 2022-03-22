@@ -9,8 +9,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class ContentReq {
-    private String title;
-    private String body;
-    private Long memberId;
+public class MemberReq {
+    private String name;
 }

@@ -2,9 +2,8 @@ package com.example.jpaautoddltset.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -21,5 +20,10 @@ public class Content {
 
     private String body;
 
+    @ManyToOne
+    @JoinColumn(name = "member_id")
+    private Member member;
 
+    @OneToMany(fetch = FetchType.LAZY ,cascade = CascadeType.ALL)
+    private List<Comment> comments;
 }

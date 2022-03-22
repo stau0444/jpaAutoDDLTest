@@ -5,12 +5,16 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class ContentReq {
-    private String title;
-    private String body;
-    private Long memberId;
+public class CommentResp {
+    private String comment;
+    private Long id;
+    private String memberName;
+    private Long repliedCommentId;
+    private String createAt;
 }
